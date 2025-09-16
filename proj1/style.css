@@ -1,0 +1,377 @@
+/* Reset e configurações básicas */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Arial", sans-serif;
+  line-height: 1.6;
+  color: #333;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header */
+.header {
+  background-color: rgba(166, 214, 210, 0.9);
+  padding: 15px 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+}
+
+.logo-icon {
+  font-size: 32px;
+}
+
+.navigation {
+  display: flex;
+  gap: 40px;
+}
+
+.navigation a {
+  text-decoration: none;
+  color: #333;
+  font-size: 18px;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.navigation a:hover {
+  color: #2c5f5d;
+}
+
+/* Main Content */
+.main-home {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Hero Section */
+.hero-section {
+  background: linear-gradient(135deg, #a6d6d2 0%, #b8e0db 100%);
+  padding: 80px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 50vh;
+}
+
+.hero-cards {
+  display: flex;
+  gap: 30px;
+  max-width: 1200px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.card {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 20px;
+  border: 3px solid #a6d6d2;
+  backdrop-filter: blur(10px);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  width: 300px;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 15px;
+}
+
+/* Welcome Section */
+.welcome-section {
+  background: linear-gradient(135deg, #2c5f5d 0%, #1a3d3b 100%);
+  color: white;
+  padding: 80px 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 50vh;
+}
+
+.welcome-content {
+  max-width: 1200px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 60px;
+}
+
+.welcome-text {
+  flex: 1;
+}
+
+.welcome-text h1 {
+  font-size: 48px;
+  margin-bottom: 30px;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.welcome-text p {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #e0e0e0;
+}
+
+.divider {
+  width: 4px;
+  height: 300px;
+  background: linear-gradient(to bottom, #6dd5ed, #2193b0);
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+.welcome-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #6dd5ed 0%, #2193b0 100%);
+  color: #333;
+  border: none;
+  padding: 15px 40px;
+  border-radius: 25px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 150px;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(109, 213, 237, 0.3);
+}
+
+/* Footer */
+.footer {
+  background-color: #1a3d3b;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  font-size: 14px;
+}
+
+/* Páginas internas */
+.main-content {
+  flex: 1;
+  padding: 40px 50px;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.main-content h1 {
+  color: #2c5f5d;
+  margin-bottom: 30px;
+  font-size: 32px;
+}
+
+.main-content h2 {
+  color: #2c5f5d;
+  margin: 30px 0 20px 0;
+  font-size: 24px;
+}
+
+.main-content h3 {
+  color: #1a3d3b;
+  margin: 25px 0 15px 0;
+  font-size: 20px;
+}
+
+.main-content p {
+  margin-bottom: 15px;
+  text-align: justify;
+}
+
+.main-content ul,
+.main-content ol {
+  margin: 15px 0;
+  padding-left: 30px;
+}
+
+.main-content li {
+  margin-bottom: 8px;
+}
+
+/* Tabelas */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  background-color: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+th {
+  background: linear-gradient(135deg, #2c5f5d, #1a3d3b);
+  color: white;
+  padding: 15px;
+  text-align: left;
+  font-weight: 600;
+}
+
+td {
+  padding: 12px 15px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+tr:hover {
+  background-color: #f8f9fa;
+}
+
+/* Formulários */
+form {
+  background-color: white;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  margin: 20px 0;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 600;
+  color: #2c5f5d;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+select,
+textarea {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+  margin-bottom: 15px;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: #6dd5ed;
+  box-shadow: 0 0 0 3px rgba(109, 213, 237, 0.1);
+}
+
+button[type="submit"],
+button[type="reset"] {
+  background: linear-gradient(135deg, #2c5f5d, #1a3d3b);
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 25px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-right: 10px;
+}
+
+button[type="submit"]:hover,
+button[type="reset"]:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(44, 95, 93, 0.3);
+}
+
+/* Imagens */
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin: 20px 0;
+}
+
+/* Links */
+a {
+  color: #2193b0;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #1a3d3b;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .header {
+    padding: 15px 20px;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .navigation {
+    gap: 20px;
+  }
+
+  .hero-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .welcome-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 40px;
+  }
+
+  .divider {
+    width: 200px;
+    height: 4px;
+  }
+
+  .welcome-buttons {
+    flex-direction: row;
+  }
+
+  .main-content {
+    padding: 20px;
+  }
+
+  table {
+    font-size: 14px;
+  }
+
+  th,
+  td {
+    padding: 10px 8px;
+  }
+}

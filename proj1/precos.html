@@ -1,169 +1,245 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Preços - Música Litúrgica Católica</title>
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎵</text></svg>">
-</head>
-<body>
-    <header>
-        <h1>Preços dos Cursos e Serviços</h1>
-        <nav>
-            <a href="index.html">Início</a> | 
-            <a href="informacoes.html">Informações</a> | 
-            <a href="precos.html">Preços</a> | 
-            <a href="contato.html">Contato</a>
-        </nav>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sobre - Música Litúrgica Católica</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎵</text></svg>"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <div class="logo">
+        <span class="logo-icon">🎵</span>
+        <span class="logo-text">Música Litúrgica</span>
+      </div>
+      <nav class="navigation">
+        <a href="index.html">Home</a>
+        <a href="informacoes.html">Informações</a>
+        <a href="precos.html">Sobre</a>
+        <a href="contato.html">Contato</a>
+      </nav>
     </header>
 
-    <main>
-        <h2>Investimento em Formação Musical Litúrgica</h2>
-        
-        <p>Oferecemos cursos especializados para diferentes níveis de conhecimento e necessidades pastorais. Nossos valores são acessíveis, pois entendemos a importância da formação musical para o serviço litúrgico.</p>
+    <main class="main-content">
+      <h1>Sobre Nossos Cursos e Serviços</h1>
 
-        <h3>Cursos de Formação Musical</h3>
-        
-        <table border="1">
+      <div class="intro-section">
+        <p>
+          Oferecemos cursos especializados para diferentes níveis de
+          conhecimento e necessidades pastorais. Nossos valores são acessíveis,
+          pois entendemos a importância da formação musical para o serviço
+          litúrgico e o crescimento espiritual.
+        </p>
+      </div>
+
+      <section class="content-section">
+        <h2>📚 Cursos de Formação Musical</h2>
+
+        <div class="price-intro">
+          <p>
+            Investimento em formação que transforma vidas e enriquece a liturgia
+            com música autenticamente sacra.
+          </p>
+        </div>
+
+        <div class="table-container">
+          <table>
             <thead>
-                <tr>
-                    <th>Curso</th>
-                    <th>Duração</th>
-                    <th>Modalidade</th>
-                    <th>Valor</th>
-                    <th>Inclui Material</th>
-                </tr>
+              <tr>
+                <th>Curso</th>
+                <th>Duração</th>
+                <th>Modalidade</th>
+                <th>Valor</th>
+                <th>Material</th>
+              </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>Fundamentos da Música Sacra</td>
-                    <td>3 meses</td>
-                    <td>Online</td>
-                    <td>R$ 180,00</td>
-                    <td>Sim</td>
-                </tr>
-                <tr>
-                    <td>Canto Gregoriano Básico</td>
-                    <td>4 meses</td>
-                    <td>Presencial</td>
-                    <td>R$ 320,00</td>
-                    <td>Sim</td>
-                </tr>
-                <tr>
-                    <td>Canto Gregoriano Avançado</td>
-                    <td>6 meses</td>
-                    <td>Presencial</td>
-                    <td>R$ 480,00</td>
-                    <td>Sim</td>
-                </tr>
-                <tr>
-                    <td>Direção de Coro Litúrgico</td>
-                    <td>5 meses</td>
-                    <td>Híbrido</td>
-                    <td>R$ 450,00</td>
-                    <td>Sim</td>
-                </tr>
-                <tr>
-                    <td>Órgão Litúrgico</td>
-                    <td>8 meses</td>
-                    <td>Presencial</td>
-                    <td>R$ 640,00</td>
-                    <td>Não</td>
-                </tr>
-                <tr>
-                    <td>Salmista e Aclamações</td>
-                    <td>2 meses</td>
-                    <td>Online</td>
-                    <td>R$ 120,00</td>
-                    <td>Sim</td>
-                </tr>
-                <tr>
-                    <td>Composição de Música Sacra</td>
-                    <td>10 meses</td>
-                    <td>Presencial</td>
-                    <td>R$ 950,00</td>
-                    <td>Não</td>
-                </tr>
+              <tr>
+                <td><strong>Fundamentos da Música Sacra</strong></td>
+                <td>3 meses</td>
+                <td><span class="badge online">Online</span></td>
+                <td class="price">R$ 180,00</td>
+                <td><span class="badge included">✓ Incluído</span></td>
+              </tr>
+              <tr>
+                <td><strong>Canto Gregoriano Básico</strong></td>
+                <td>4 meses</td>
+                <td><span class="badge presencial">Presencial</span></td>
+                <td class="price">R$ 320,00</td>
+                <td><span class="badge included">✓ Incluído</span></td>
+              </tr>
+              <tr>
+                <td><strong>Canto Gregoriano Avançado</strong></td>
+                <td>6 meses</td>
+                <td><span class="badge presencial">Presencial</span></td>
+                <td class="price">R$ 480,00</td>
+                <td><span class="badge included">✓ Incluído</span></td>
+              </tr>
+              <tr>
+                <td><strong>Direção de Coro Litúrgico</strong></td>
+                <td>5 meses</td>
+                <td><span class="badge hibrido">Híbrido</span></td>
+                <td class="price">R$ 450,00</td>
+                <td><span class="badge included">✓ Incluído</span></td>
+              </tr>
+              <tr>
+                <td><strong>Órgão Litúrgico</strong></td>
+                <td>8 meses</td>
+                <td><span class="badge presencial">Presencial</span></td>
+                <td class="price">R$ 640,00</td>
+                <td><span class="badge not-included">Não incluído</span></td>
+              </tr>
+              <tr>
+                <td><strong>Salmista e Aclamações</strong></td>
+                <td>2 meses</td>
+                <td><span class="badge online">Online</span></td>
+                <td class="price">R$ 120,00</td>
+                <td><span class="badge included">✓ Incluído</span></td>
+              </tr>
+              <tr class="featured-row">
+                <td><strong>Composição de Música Sacra</strong></td>
+                <td>10 meses</td>
+                <td><span class="badge presencial">Presencial</span></td>
+                <td class="price featured-price">R$ 950,00</td>
+                <td><span class="badge not-included">Não incluído</span></td>
+              </tr>
             </tbody>
-        </table>
+          </table>
+        </div>
+      </section>
 
-        <h3>Serviços de Consultoria e Assessoria</h3>
-        
-        <p>Prestamos serviços especializados para paróquias, comunidades religiosas e grupos musicais que desejam aprimorar sua prática litúrgico-musical.</p>
+      <section class="content-section">
+        <h2>🎯 Serviços de Consultoria e Assessoria</h2>
 
-        <table border="1">
+        <div class="service-intro">
+          <p>
+            Prestamos serviços especializados para paróquias, comunidades
+            religiosas e grupos musicais que desejam aprimorar sua prática
+            litúrgico-musical de acordo com as normas da Igreja.
+          </p>
+        </div>
+
+        <div class="table-container">
+          <table>
             <thead>
-                <tr>
-                    <th>Serviço</th>
-                    <th>Tipo</th>
-                    <th>Duração</th>
-                    <th>Valor por Hora</th>
-                    <th>Pacote Mínimo</th>
-                </tr>
+              <tr>
+                <th>Serviço</th>
+                <th>Tipo</th>
+                <th>Duração</th>
+                <th>Valor/Hora</th>
+                <th>Mínimo</th>
+              </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>Consultoria em Música Litúrgica</td>
-                    <td>Presencial</td>
-                    <td>Flexível</td>
-                    <td>R$ 85,00</td>
-                    <td>3 horas</td>
-                </tr>
-                <tr>
-                    <td>Formação de Schola Cantorum</td>
-                    <td>Presencial</td>
-                    <td>Workshop</td>
-                    <td>R$ 120,00</td>
-                    <td>8 horas</td>
-                </tr>
-                <tr>
-                    <td>Oficina de Canto Gregoriano</td>
-                    <td>Presencial</td>
-                    <td>Intensivo</td>
-                    <td>R$ 95,00</td>
-                    <td>6 horas</td>
-                </tr>
-                <tr>
-                    <td>Assessoria Musical para Celebrações</td>
-                    <td>Presencial</td>
-                    <td>Pontual</td>
-                    <td>R$ 150,00</td>
-                    <td>2 horas</td>
-                </tr>
-                <tr>
-                    <td>Consultoria Online</td>
-                    <td>Virtual</td>
-                    <td>Flexível</td>
-                    <td>R$ 65,00</td>
-                    <td>2 horas</td>
-                </tr>
-                <tr>
-                    <td>Revisão de Repertório Litúrgico</td>
-                    <td>Online/Presencial</td>
-                    <td>Análise</td>
-                    <td>R$ 75,00</td>
-                    <td>4 horas</td>
-                </tr>
+              <tr>
+                <td><strong>Consultoria em Música Litúrgica</strong></td>
+                <td><span class="badge presencial">Presencial</span></td>
+                <td>Flexível</td>
+                <td class="price">R$ 85,00</td>
+                <td>3 horas</td>
+              </tr>
+              <tr>
+                <td><strong>Formação de Schola Cantorum</strong></td>
+                <td><span class="badge presencial">Presencial</span></td>
+                <td>Workshop</td>
+                <td class="price">R$ 120,00</td>
+                <td>8 horas</td>
+              </tr>
+              <tr>
+                <td><strong>Oficina de Canto Gregoriano</strong></td>
+                <td><span class="badge presencial">Presencial</span></td>
+                <td>Intensivo</td>
+                <td class="price">R$ 95,00</td>
+                <td>6 horas</td>
+              </tr>
+              <tr class="featured-row">
+                <td><strong>Assessoria Musical para Celebrações</strong></td>
+                <td><span class="badge presencial">Presencial</span></td>
+                <td>Pontual</td>
+                <td class="price featured-price">R$ 150,00</td>
+                <td>2 horas</td>
+              </tr>
+              <tr>
+                <td><strong>Consultoria Online</strong></td>
+                <td><span class="badge online">Virtual</span></td>
+                <td>Flexível</td>
+                <td class="price">R$ 65,00</td>
+                <td>2 horas</td>
+              </tr>
+              <tr>
+                <td><strong>Revisão de Repertório Litúrgico</strong></td>
+                <td><span class="badge hibrido">Análise</span></td>
+                <td>Flexível</td>
+                <td class="price">R$ 75,00</td>
+                <td>4 horas</td>
+              </tr>
             </tbody>
-        </table>
+          </table>
+        </div>
+      </section>
 
-        <h3>Observações Importantes</h3>
-        
-        <ul>
-            <li>Valores válidos até dezembro de 2025</li>
-            <li>Desconto de 15% para estudantes de seminário e religiosos</li>
-            <li>Desconto de 10% para grupos acima de 5 pessoas</li>
-            <li>Parcelamento em até 3x sem juros</li>
-            <li>Material didático incluso onde indicado</li>
-        </ul>
+      <section class="benefits-section">
+        <h2>💡 Vantagens e Benefícios</h2>
 
-        <p><img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='350' height='200' viewBox='0 0 350 200'><rect width='350' height='200' fill='%23fff8dc'/><text x='175' y='100' text-anchor='middle' font-family='Arial' font-size='16' fill='%238b4513'>Imagem: Material Didático</text></svg>" alt="Livros e partituras de música sacra"></p>
+        <div class="benefits-grid">
+          <div class="benefit-card">
+            <div class="benefit-icon">🎓</div>
+            <h4>Desconto Especial</h4>
+            <p>15% para estudantes de seminário e religiosos</p>
+          </div>
+          <div class="benefit-card">
+            <div class="benefit-icon">👥</div>
+            <h4>Desconto em Grupo</h4>
+            <p>10% para grupos acima de 5 pessoas</p>
+          </div>
+          <div class="benefit-card">
+            <div class="benefit-icon">💳</div>
+            <h4>Parcelamento</h4>
+            <p>Em até 3x sem juros</p>
+          </div>
+          <div class="benefit-card">
+            <div class="benefit-icon">📚</div>
+            <h4>Material Incluído</h4>
+            <p>Apostilas e partituras nos cursos indicados</p>
+          </div>
+          <div class="benefit-card">
+            <div class="benefit-icon">⏰</div>
+            <h4>Valores Válidos</h4>
+            <p>Até dezembro de 2025</p>
+          </div>
+          <div class="benefit-card">
+            <div class="benefit-icon">🎵</div>
+            <h4>Certificação</h4>
+            <p>Certificados reconhecidos pela Igreja</p>
+          </div>
+        </div>
+      </section>
 
-        <p>Para mais informações sobre descontos especiais ou condições de pagamento, <a href="contato.html">entre em contato conosco</a>. Estaremos felizes em atendê-lo e orientá-lo na escolha do curso mais adequado às suas necessidades.</p>
+      <div class="image-section">
+        <img
+          src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='400' height='250' viewBox='0 0 400 250'><rect width='400' height='250' fill='%23fff8dc' rx='15'/><rect x='50' y='50' width='300' height='150' fill='white' stroke='%238b4513' stroke-width='2' rx='10'/><text x='200' y='80' text-anchor='middle' font-family='serif' font-size='16' fill='%238b4513'>Material Didático</text><rect x='80' y='100' width='60' height='80' fill='%23f4f4f4' stroke='%23666' rx='5'/><rect x='170' y='100' width='60' height='80' fill='%23f4f4f4' stroke='%23666' rx='5'/><rect x='260' y='100' width='60' height='80' fill='%23f4f4f4' stroke='%23666' rx='5'/><text x='110' y='195' text-anchor='middle' font-family='Arial' font-size='10' fill='%238b4513'>Livros</text><text x='200' y='195' text-anchor='middle' font-family='Arial' font-size='10' fill='%238b4513'>Partituras</text><text x='290' y='195' text-anchor='middle' font-family='Arial' font-size='10' fill='%238b4513'>CDs</text></svg>"
+          alt="Material didático: livros e partituras de música sacra"
+        />
+      </div>
+
+      <div class="call-to-action">
+        <h3>Pronto para começar sua formação?</h3>
+        <p>
+          Para mais informações sobre descontos especiais, condições de
+          pagamento ou para escolher o curso mais adequado às suas necessidades,
+          <a href="contato.html">entre em contato conosco</a>. Estaremos felizes
+          em orientá-lo em sua jornada musical litúrgica.
+        </p>
+      </div>
     </main>
 
-    <footer>
-        <p>© 2025 Música Litúrgica Católica - Servindo à Santa Igreja</p>
+    <footer class="footer">
+      <p>© 2025 Música Litúrgica Católica - Servindo à Santa Igreja</p>
     </footer>
-</body>
+  </body>
 </html>
+

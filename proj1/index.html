@@ -1,46 +1,86 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Música Litúrgica Católica - Página Inicial</title>
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎵</text></svg>">
-</head>
-<body>
-    <header>
-        <h1>Música Litúrgica Católica</h1>
-        <nav>
-            <a href="index.html">Início</a> | 
-            <a href="informacoes.html">Informações</a> | 
-            <a href="precos.html">Preços</a> | 
-            <a href="contato.html">Contato</a>
-        </nav>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎵</text></svg>"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <div class="logo">
+        <span class="logo-icon">🎵</span>
+        <span class="logo-text">Música Litúrgica</span>
+      </div>
+      <nav class="navigation">
+        <a href="index.html">Home</a>
+        <a href="informacoes.html">Informações</a>
+        <a href="precos.html">Sobre</a>
+        <a href="contato.html">Contato</a>
+      </nav>
     </header>
 
-    <main>
-        <h2>Bem-vindos ao Portal da Música Sacra</h2>
-        
-        <p>A música litúrgica católica representa uma das mais ricas tradições musicais da humanidade, desenvolvida ao longo de dois milênios de história da Igreja. Desde os primeiros cantos cristãos até as composições contemporâneas, a música sacra tem como objetivo principal elevar a alma a Deus e favorecer a participação ativa dos fiéis na sagrada liturgia.</p>
+    <main class="main-home">
+      <!-- Hero Section com Cards de Música Sacra -->
+      <section class="hero-section">
+        <div class="hero-cards">
+          <div class="card">
+            <img
+              src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='350' height='250' viewBox='0 0 350 250'><rect width='350' height='250' fill='%23f0f0f0'/><rect x='50' y='50' width='250' height='150' fill='white' stroke='%23333' stroke-width='2'/><text x='175' y='80' text-anchor='middle' font-family='serif' font-size='14' fill='%23333'>Canto Gregoriano</text><path d='M80 100 Q100 90 120 100 T160 100' stroke='%23666' stroke-width='2' fill='none'/><path d='M80 120 Q100 110 120 120 T160 120' stroke='%23666' stroke-width='2' fill='none'/></svg>"
+              alt="Canto Gregoriano"
+            />
+          </div>
+          <div class="card">
+            <img
+              src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='350' height='250' viewBox='0 0 350 250'><rect width='350' height='250' fill='%23f5f5f5'/><rect x='50' y='50' width='250' height='150' fill='white' stroke='%23444' stroke-width='2'/><text x='175' y='80' text-anchor='middle' font-family='serif' font-size='14' fill='%23444'>Polifonia Sacra</text><circle cx='100' cy='110' r='8' fill='%23666'/><circle cx='130' cy='120' r='8' fill='%23666'/><circle cx='160' cy='105' r='8' fill='%23666'/><circle cx='190' cy='125' r='8' fill='%23666'/></svg>"
+              alt="Polifonia Sacra"
+            />
+          </div>
+          <div class="card">
+            <img
+              src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='350' height='250' viewBox='0 0 350 250'><rect width='350' height='250' fill='%23fff8dc'/><rect x='50' y='50' width='250' height='150' fill='white' stroke='%238b4513' stroke-width='2'/><text x='175' y='80' text-anchor='middle' font-family='serif' font-size='14' fill='%238b4513'>Música Litúrgica</text><rect x='80' y='100' width='15' height='60' fill='%23ddd'/><rect x='110' y='90' width='15' height='70' fill='%23ddd'/><rect x='140' y='95' width='15' height='65' fill='%23ddd'/><rect x='170' y='105' width='15' height='55' fill='%23ddd'/></svg>"
+              alt="Música Litúrgica Contemporânea"
+            />
+          </div>
+        </div>
+      </section>
 
-        <h3>Nossa Missão</h3>
-        
-        <p>Nosso portal tem como missão promover o conhecimento e a prática da autêntica música litúrgica católica, seguindo fielmente as orientações do Magistério da Igreja, especialmente os documentos Sacrosanctum Concilium e Musicam Sacram. Buscamos oferecer recursos de qualidade para músicos, maestros, cantores e todos aqueles que desejam servir à liturgia através da música.</p>
-
-        <h3>A Importância da Música na Liturgia</h3>
-        
-        <p>Conforme ensina a Igreja, a música sacra possui uma função ministerial na liturgia, não sendo apenas ornamental, mas constituindo parte integrante da celebração. O canto gregoriano, considerado o canto próprio da liturgia romana, ocupa lugar de honra especial, mas a Igreja também acolhe outras formas de música sacra que estejam em conformidade com o espírito litúrgico.</p>
-
-        <p>A participação do povo através do canto fortalece a união da assembleia e expressa de modo sublime os sentimentos da alma cristã. Por isso, é fundamental que a música litúrgica seja autenticamente sacra, caracterizada pela santidade, bondade das formas e universalidade.</p>
-
-        <h3>Tradição e Renovação</h3>
-        
-        <p>Mantendo-nos fiéis à tradição bimilenar da Igreja, promovemos tanto o canto gregoriano quanto o desenvolvimento de novas composições que respeitem os princípios da música sacra. Nosso trabalho busca formar músicos comprometidos com a liturgia e conscientes de sua responsabilidade ministerial.</p>
-
-        <p><img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'><rect width='300' height='200' fill='%23f0f0f0'/><text x='150' y='100' text-anchor='middle' font-family='Arial' font-size='16' fill='%23666'>Imagem: Partitura Gregoriana</text></svg>" alt="Partitura de Canto Gregoriano"></p>
+      <!-- Welcome Section -->
+      <section class="welcome-section">
+        <div class="welcome-content">
+          <div class="welcome-text">
+            <h1>Bem Vindos!</h1>
+            <p>
+              A música litúrgica católica representa uma das mais ricas
+              tradições musicais da humanidade, desenvolvida ao longo de dois
+              milênios de história da Igreja. Desde os primeiros cantos cristãos
+              até as composições contemporâneas, a música sacra tem como
+              objetivo principal elevar a alma a Deus e favorecer a participação
+              ativa dos fiéis na sagrada liturgia. Nosso portal tem como missão
+              promover o conhecimento e a prática da autêntica música litúrgica
+              católica.
+            </p>
+          </div>
+          <div class="divider"></div>
+          <div class="welcome-buttons">
+            <a href="https://orepertorioliturgico.com.br/" target="_blank"
+              ><button class="btn-primary">Repertórios</button></a
+            >
+            <a href="contato.html"
+              ><button class="btn-primary">Contate-nos</button></a
+            >
+          </div>
+        </div>
+      </section>
     </main>
 
-    <footer>
-        <p>© 2025 Música Litúrgica Católica - Servindo à Santa Igreja</p>
+    <footer class="footer">
+      <p>© 2025 Música Litúrgica Católica - Servindo à Santa Igreja</p>
     </footer>
-</body>
+  </body>
 </html>
+
