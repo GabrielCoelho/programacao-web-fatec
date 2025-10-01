@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculadora Avançada</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="error-alert" id="errorAlert"></div>
+
+    <div class="header">
+      <h1>Calculadora Avançada</h1>
+      <p>
+        💡 Dica: Use seu teclado para digitar números e operações mais
+        rapidamente!
+      </p>
+    </div>
+
+    <div class="container">
+      <div class="calculator">
+        <div class="display">
+          <div class="display-previous" id="previousDisplay"></div>
+          <div class="display-current" id="currentDisplay">0</div>
+        </div>
+        <div class="buttons">
+          <button class="clear" onclick="clearCalculator()">C</button>
+          <button class="delete" onclick="deleteDigit()">⌫</button>
+          <button class="parenthesis" onclick="appendChar('(')">(</button>
+          <button class="parenthesis" onclick="appendChar(')')">)</button>
+          <button class="special" onclick="applySquareRoot()">√</button>
+
+          <button onclick="appendChar('7')">7</button>
+          <button onclick="appendChar('8')">8</button>
+          <button onclick="appendChar('9')">9</button>
+          <button class="operator" onclick="appendChar('/')">÷</button>
+          <button class="special" onclick="applyPercent()">%</button>
+
+          <button onclick="appendChar('4')">4</button>
+          <button onclick="appendChar('5')">5</button>
+          <button onclick="appendChar('6')">6</button>
+          <button class="operator" onclick="appendChar('*')">×</button>
+          <button class="special" onclick="appendChar('^')">x^y</button>
+
+          <button onclick="appendChar('1')">1</button>
+          <button onclick="appendChar('2')">2</button>
+          <button onclick="appendChar('3')">3</button>
+          <button class="operator" onclick="appendChar('-')">−</button>
+          <button class="operator" onclick="appendChar('+')">+</button>
+
+          <button onclick="appendChar('0')" style="grid-column: span 2">
+            0
+          </button>
+          <button onclick="appendChar('.')">.</button>
+          <button class="equals" onclick="calculate()">=</button>
+        </div>
+      </div>
+
+      <div class="history">
+        <div class="history-header">
+          <span class="history-title">Histórico</span>
+          <button class="clear-history" onclick="clearHistory()">Limpar</button>
+        </div>
+        <div class="history-list" id="historyList">
+          <div class="empty-history">Nenhum cálculo realizado ainda</div>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
