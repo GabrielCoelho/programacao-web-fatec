@@ -1,0 +1,116 @@
+<div class="modal-backdrop" (click)="onBackdropClick($event)">
+  <div class="modal-content">
+    <button class="close-btn" (click)="onClose()" aria-label="Fechar">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+      </svg>
+    </button>
+
+    @if (isLoading) {
+      <div class="loading">
+        <div class="spinner"></div>
+        <p>Carregando...</p>
+      </div>
+    } @else if (movieDetails) {
+      <div class="modal-body">
+        <div
+          class="backdrop"
+          [style.background-image]="'url(' + tmdbService.getBackdropUrl(movieDetails.backdrop_path) + ')'"
+        >
+          <div class="backdrop-overlay"></div>
+        </div>
+
+        <div class="content">
+          <div class="poster-section">
+            <img
+              [src]="tmdbService.getPosterUrl(movieDetails.poster_path)"
+              [alt]="movieDetails.title"
+              class="poster"
+            />
+            <button
+              class="favorite-btn"
+              (click)="toggleFavorite()"
+              [class.active]="isFavorite()"
+            >
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+              </svg>
+              {{ isFavorite() ? 'Remover dos Favoritos' : 'Adicionar aos Favoritos' }}
+            </button>
+          </div>
+
+          <div class="details-section">
+            <h1 class="title">{{ movieDetails.title }}</h1>
+
+            @if (movieDetails.tagline) {
+              <p class="tagline">{{ movieDetails.tagline }}</p>
+            }
+
+            <div class="meta-info">
+              <div class="meta-item">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="#ffd700">
+                  <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+                </svg>
+                <span class="rating-value">{{ getRating() }}</span>
+                <span class="rating-count">({{ movieDetails.vote_count }} votos)</span>
+              </div>
+              <div class="meta-item">
+                <span>{{ getReleaseYear() }}</span>
+              </div>
+              <div class="meta-item">
+                <span>{{ getRuntime() }}</span>
+              </div>
+            </div>
+
+            <div class="genres">
+              @for (genre of movieDetails.genres; track genre.id) {
+                <span class="genre-tag">{{ genre.name }}</span>
+              }
+            </div>
+
+            <div class="section">
+              <h2>Sinopse</h2>
+              <p class="overview">{{ movieDetails.overview || 'Sem sinopse disponível.' }}</p>
+            </div>
+
+            @if (movieDetails.budget > 0 || movieDetails.revenue > 0) {
+              <div class="section">
+                <h2>Informações Financeiras</h2>
+                <div class="info-grid">
+                  @if (movieDetails.budget > 0) {
+                    <div class="info-item">
+                      <span class="info-label">Orçamento:</span>
+                      <span class="info-value">{{ formatCurrency(movieDetails.budget) }}</span>
+                    </div>
+                  }
+                  @if (movieDetails.revenue > 0) {
+                    <div class="info-item">
+                      <span class="info-label">Receita:</span>
+                      <span class="info-value">{{ formatCurrency(movieDetails.revenue) }}</span>
+                    </div>
+                  }
+                </div>
+              </div>
+            }
+
+            @if (movieDetails.production_companies && movieDetails.production_companies.length > 0) {
+              <div class="section">
+                <h2>Produção</h2>
+                <div class="production-companies">
+                  @for (company of movieDetails.production_companies; track company.id) {
+                    <span class="company">{{ company.name }}</span>
+                  }
+                </div>
+              </div>
+            }
+          </div>
+        </div>
+      </div>
+    } @else {
+      <div class="error">
+        <p>Erro ao carregar detalhes do filme.</p>
+        <button class="retry-btn" (click)="loadMovieDetails()">Tentar Novamente</button>
+      </div>
+    }
+  </div>
+</div>

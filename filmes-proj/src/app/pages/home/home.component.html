@@ -1,0 +1,84 @@
+<div class="home-container">
+  <header class="header">
+    <h1 class="app-title">
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="#e50914">
+        <path d="M18 4l2 4h-3l-2-4h-2l2 4h-3l-2-4H8l2 4H7L5 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V4h-4z"/>
+      </svg>
+      Catálogo de Filmes
+    </h1>
+  </header>
+
+  <div class="search-section">
+    <app-search-bar (searchChange)="onSearchChange($event)"></app-search-bar>
+  </div>
+
+  <div class="filter-section">
+    <app-filter-panel (filtersChange)="onFiltersChange($event)"></app-filter-panel>
+  </div>
+
+  <div class="content">
+    <div class="section-header">
+      <h2>{{ getPageTitle() }}</h2>
+      @if (!isLoading && movies.length > 0) {
+        <span class="results-count">Página {{ currentPage }} de {{ totalPages }}</span>
+      }
+    </div>
+
+    @if (isLoading) {
+      <div class="loading">
+        <div class="spinner"></div>
+        <p>Carregando filmes...</p>
+      </div>
+    } @else if (movies.length === 0) {
+      <div class="empty-state">
+        <svg width="80" height="80" viewBox="0 0 24 24" fill="#666">
+          <path d="M18 4l2 4h-3l-2-4h-2l2 4h-3l-2-4H8l2 4H7L5 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V4h-4z"/>
+        </svg>
+        <h3>Nenhum filme encontrado</h3>
+        <p>Tente ajustar os filtros ou buscar por outro termo.</p>
+      </div>
+    } @else {
+      <div class="movies-grid">
+        @for (movie of movies; track movie.id) {
+          <app-movie-card
+            [movie]="movie"
+            (movieClick)="onMovieClick($event)"
+          ></app-movie-card>
+        }
+      </div>
+
+      <div class="pagination">
+        <button
+          class="page-btn"
+          (click)="onPreviousPage()"
+          [disabled]="currentPage === 1"
+        >
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+          </svg>
+          Anterior
+        </button>
+
+        <span class="page-info">Página {{ currentPage }} de {{ totalPages }}</span>
+
+        <button
+          class="page-btn"
+          (click)="onNextPage()"
+          [disabled]="currentPage === totalPages"
+        >
+          Próxima
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
+          </svg>
+        </button>
+      </div>
+    }
+  </div>
+</div>
+
+@if (selectedMovieId !== null) {
+  <app-movie-modal
+    [movieId]="selectedMovieId"
+    (close)="onCloseModal()"
+  ></app-movie-modal>
+}

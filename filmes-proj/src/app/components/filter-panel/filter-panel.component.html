@@ -1,0 +1,56 @@
+<div class="filter-panel">
+  <div class="filters">
+    <div class="filter-group">
+      <label for="genre-filter">Gênero:</label>
+      <select
+        id="genre-filter"
+        [(ngModel)]="selectedGenre"
+        (change)="onFilterChange()"
+        class="filter-select"
+      >
+        <option [value]="undefined">Todos os gêneros</option>
+        @for (genre of genres; track genre.id) {
+          <option [value]="genre.id">{{ genre.name }}</option>
+        }
+      </select>
+    </div>
+
+    <div class="filter-group">
+      <label for="year-filter">Ano:</label>
+      <select
+        id="year-filter"
+        [(ngModel)]="selectedYear"
+        (change)="onFilterChange()"
+        class="filter-select"
+      >
+        <option [value]="undefined">Todos os anos</option>
+        @for (year of years; track year) {
+          <option [value]="year">{{ year }}</option>
+        }
+      </select>
+    </div>
+
+    <div class="filter-group">
+      <label for="sort-filter">Ordenar por:</label>
+      <select
+        id="sort-filter"
+        [(ngModel)]="selectedSort"
+        (change)="onFilterChange()"
+        class="filter-select"
+      >
+        @for (option of sortOptions; track option.value) {
+          <option [value]="option.value">{{ option.label }}</option>
+        }
+      </select>
+    </div>
+
+    @if (hasActiveFilters()) {
+      <button class="clear-filters-btn" (click)="clearFilters()">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+        </svg>
+        Limpar Filtros
+      </button>
+    }
+  </div>
+</div>
