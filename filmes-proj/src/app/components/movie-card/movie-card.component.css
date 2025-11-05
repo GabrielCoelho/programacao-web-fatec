@@ -31,31 +31,54 @@
   object-fit: cover;
 }
 
-.favorite-btn {
+.action-buttons {
   position: absolute;
-  top: 12px;
-  right: 12px;
-  background: rgba(0, 0, 0, 0.7);
+  top: 8px;
+  right: 8px;
+  display: flex;
+  gap: 6px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 2;
+}
+
+.movie-card:hover .action-buttons {
+  opacity: 1;
+}
+
+.action-btn {
+  background: rgba(0, 0, 0, 0.8);
   border: none;
   border-radius: 50%;
-  width: 40px;
-  height: 40px;
+  width: 36px;
+  height: 36px;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   color: #fff;
   transition: all 0.3s ease;
-  z-index: 2;
+  backdrop-filter: blur(10px);
 }
 
-.favorite-btn:hover {
-  background: rgba(0, 0, 0, 0.9);
-  transform: scale(1.1);
+.action-btn:hover {
+  background: rgba(0, 0, 0, 0.95);
+  transform: scale(1.15);
 }
 
 .favorite-btn.active {
   color: #e50914;
+  background: rgba(229, 9, 20, 0.2);
+}
+
+.watched-btn.active {
+  color: #00d4ff;
+  background: rgba(0, 212, 255, 0.2);
+}
+
+.watchlist-btn.active {
+  color: #00ff88;
+  background: rgba(0, 255, 136, 0.2);
 }
 
 .rating {

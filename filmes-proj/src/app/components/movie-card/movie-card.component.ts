@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { Movie } from '../../models/movie.interface';
 import { TmdbService } from '../../services/tmdb.service';
 import { FavoritesService } from '../../services/favorites.service';
+import { MovieListsService } from '../../services/movie-lists.service';
 
 @Component({
   selector: 'app-movie-card',
@@ -17,7 +18,8 @@ export class MovieCardComponent {
 
   constructor(
     public tmdbService: TmdbService,
-    public favoritesService: FavoritesService
+    public favoritesService: FavoritesService,
+    public movieListsService: MovieListsService
   ) {}
 
   onCardClick(): void {
@@ -29,8 +31,26 @@ export class MovieCardComponent {
     this.favoritesService.toggleFavorite(this.movie);
   }
 
+  onWatchedClick(event: Event): void {
+    event.stopPropagation();
+    this.movieListsService.toggleWatched(this.movie);
+  }
+
+  onWatchlistClick(event: Event): void {
+    event.stopPropagation();
+    this.movieListsService.toggleWatchlist(this.movie);
+  }
+
   isFavorite(): boolean {
     return this.favoritesService.isFavorite(this.movie.id);
+  }
+
+  isWatched(): boolean {
+    return this.movieListsService.isWatched(this.movie.id);
+  }
+
+  isInWatchlist(): boolean {
+    return this.movieListsService.isInWatchlist(this.movie.id);
   }
 
   getRating(): string {

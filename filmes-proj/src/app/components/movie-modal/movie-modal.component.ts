@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { MovieDetails } from '../../models/movie.interface';
 import { TmdbService } from '../../services/tmdb.service';
 import { FavoritesService } from '../../services/favorites.service';
+import { MovieListsService } from '../../services/movie-lists.service';
 
 @Component({
   selector: 'app-movie-modal',
@@ -20,7 +21,8 @@ export class MovieModalComponent implements OnInit {
 
   constructor(
     public tmdbService: TmdbService,
-    public favoritesService: FavoritesService
+    public favoritesService: FavoritesService,
+    public movieListsService: MovieListsService
   ) {}
 
   ngOnInit(): void {
@@ -62,8 +64,28 @@ export class MovieModalComponent implements OnInit {
     }
   }
 
+  toggleWatched(): void {
+    if (this.movieDetails) {
+      this.movieListsService.toggleWatched(this.movieDetails);
+    }
+  }
+
+  toggleWatchlist(): void {
+    if (this.movieDetails) {
+      this.movieListsService.toggleWatchlist(this.movieDetails);
+    }
+  }
+
   isFavorite(): boolean {
     return this.movieDetails ? this.favoritesService.isFavorite(this.movieDetails.id) : false;
+  }
+
+  isWatched(): boolean {
+    return this.movieDetails ? this.movieListsService.isWatched(this.movieDetails.id) : false;
+  }
+
+  isInWatchlist(): boolean {
+    return this.movieDetails ? this.movieListsService.isInWatchlist(this.movieDetails.id) : false;
   }
 
   getRating(): string {

@@ -1,0 +1,53 @@
+<div class="watchlist-container">
+  <div class="content">
+    <div class="section-header">
+      <h2>
+        @if (watchlistMovies.length > 0) {
+          {{ watchlistMovies.length }} {{ watchlistMovies.length === 1 ? 'filme para assistir' : 'filmes para assistir' }}
+        } @else {
+          Lista vazia
+        }
+      </h2>
+      @if (watchlistMovies.length > 0) {
+        <button class="clear-btn" (click)="clearAllWatchlist()">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"/>
+          </svg>
+          Limpar Lista
+        </button>
+      }
+    </div>
+
+    @if (watchlistMovies.length === 0) {
+      <div class="empty-state">
+        <svg width="80" height="80" viewBox="0 0 24 24" fill="#666">
+          <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-9 14l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+        </svg>
+        <h3>Lista vazia</h3>
+        <p>Adicione filmes que você deseja assistir no futuro.</p>
+        <a href="/" class="browse-btn">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M18 4l2 4h-3l-2-4h-2l2 4h-3l-2-4H8l2 4H7L5 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V4h-4z"/>
+          </svg>
+          Explorar Filmes
+        </a>
+      </div>
+    } @else {
+      <div class="movies-grid">
+        @for (movie of watchlistMovies; track movie.id) {
+          <app-movie-card
+            [movie]="movie"
+            (movieClick)="onMovieClick($event)"
+          ></app-movie-card>
+        }
+      </div>
+    }
+  </div>
+</div>
+
+@if (selectedMovieId !== null) {
+  <app-movie-modal
+    [movieId]="selectedMovieId"
+    (close)="onCloseModal()"
+  ></app-movie-modal>
+}
